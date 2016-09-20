@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="meuPrimeiroApp">
+   <head>
+      <meta charset="utf-8">
+      <title>Minicurso - Exercício 5</title>
+      <base href="/">
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+   </head>
+   <body ng-cloak>
+      <md-content ng-controller="appCtrl">
+        <md-tabs md-dynamic-height md-border-bottom md-center-tabs="true">
+          <md-tab label="Repositórios" md-on-select="clickRepos()">
+            <md-content class="md-padding">
+              <div ng-view></div>
+            </md-content>
+          </md-tab>
+          <md-tab label="Seguidores" md-on-select="clickSeguidores()">
+            <md-content class="md-padding">
+              <div ng-view></div>
+            </md-content>
+          </md-tab>
+         </md-tabs>
+      </md-content>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+      <script src="script.js"></script>
+   </body>
+</html>
+
+

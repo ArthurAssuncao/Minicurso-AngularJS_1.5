@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="meuPrimeiroApp">
+   <head>
+      <meta charset="utf-8">
+      <title>Minicurso - Exercício 2</title>
+      <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ngcloak],
+        [x-ng-cloak], .ng-cloak, .x-ngcloak
+        {
+          display: none !important;
+        }
+      </style>
+   </head>
+   <body ng-clock ng-controller="primeiroCtrl">
+      Busca <input type="text" ng-model="termo"></input><br />
+      <span>{{termo}}</span>
+      <ul>
+        <li ng-repeat="repo in repos">{{ repo.name }}</li>
+      </ul>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+      <script>
+        var app = angular.module("meuPrimeiroApp", []);
+        app.factory('FacRepos', function($http){
+          return function(url, scope){
+            return{
+              url: url,
+              scope: scope,
+              get: function(){
+                $http.get(url)
+                  .then(function successCallback(response) {
+                    scope.repos = response.data;
+                    console.log(scope.repos);
+                  }, function errorCallback(response) {
+                    console.log('Error: ' + response);
+                  });
+              }
+            }
+          }
+        });      
+        
+        app.controller("primeiroCtrl", function($scope, $http, FacRepos){
+            $scope.repos = [];
+            var reposGithub = FacRepos("https://api.github.com/users/arthurassuncao/repos", $scope);
+            reposGithub.get();
+        });
+      </script>
+   </body>
+</html>
+
+

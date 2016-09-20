@@ -1,0 +1,87 @@
+section
+  section(data-transition="slide")
+    h3 Progressive Web App
+    H4 Introdução
+    p "Esses aplicativos não são entregues através da App Store, eles são apenas websites que tomaram a dose certa de vitaminas."
+  section(data-transition="slide")
+    p Progressivo o que?
+    ul
+      li Responsivo
+      li Independentes de conexão: Service Workers permite até offline
+      li Instaláveis
+      li Sempre Atualizados
+      li Seguro: servidor pode usar TLS
+      li SEO-friendly
+      li Engajável: pode trazer usuário via notificações :)
+      li Linkável
+      li <em>Appy-like</em>
+      li etc...
+  section(data-transition="slide")
+    h3 Instalável
+    p Adicionar a tela inicial
+    img(src="img/web-app/homescreen.gif")
+  section(data-transition="slide")
+    h3 Instalável
+    p Splash Screen
+    img(src="img/web-app/splashscreen.gif")
+  section(data-transition="slide")
+    h3 Instalável
+    p Manifest
+    pre
+      code(data-noescape)
+        |{
+        |  "name": "Minicurso AngularJS",
+        |  "short_name": "MiniAngularJS",
+        |  "icons": [{
+        |  "src": "images/touch/icon-128x128.png",
+        |  "sizes": "128x128",
+        |  "type": "image/png"
+        |  },
+        |  …
+        |  {
+        |  "src": "images/touch/chrome-splashscreen-icon-384x384.png",
+        |  "sizes": "384x384",
+        |  "type": "image/png"
+        |  }],
+        |  "start_url": <mark>"/?homescreen=1"</mark>,
+        |  "background_color": "#3E4EB8",
+        |  "display": "standalone",
+        |  "theme_color": "#FFFFFF"
+        |}
+  section(data-transition="slide")
+    h3 Service Workers
+    ul
+      li Offline (cache)
+      li Background Sync
+      li Push API
+      li Interceptar Requests
+  section(data-transition="slide")
+    p Cache de algumas partes
+    img(src="img/web-app/appshell.jpg")
+  section(data-transition="slide")
+    <iframe width="720" height="424" src="https://www.youtube.com/embed/px-J9Ghvcx4" frameborder="0" allowfullscreen></iframe>
+  section(data-transition="slide")
+    h3 Engajável
+    p Push Notifications
+    h2 72%
+    p dos usuários abrem o app
+  section(data-transition="slide")
+    h3 Engajável
+    p Push Notifications
+    img(src="img/web-app/push.png")
+  section(data-transition="slide")
+    h3 Engajável
+    p Push Notifications
+    img(src="img/web-app/custom_notifications.png")
+  section(data-transition="slide")
+    h3 Engajável
+    p Chamadas Nativas
+    ul
+      li Câmera
+      li Microfone
+      li Localização
+      li Bluetooth
+      li etc...
+  section
+    p Quer exemplos?
+    <iframe width="720" height="424" src="https://www.youtube.com/embed/gzHdKxxlD98" frameborder="0" allowfullscreen></iframe>

@@ -1,0 +1,80 @@
+section(data-transition="slide")
+  section(data-transition="slide")
+    h3 Angular Material
+    ul
+      li Biblioteca Angular com componentes que seguem o Material Design
+      li Grid flexbox
+      li Web components
+      li CSS de layout
+      li Temas
+      li <a>https://material.angularjs.org/latest/</a>
+  section(data-transition="slide")
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
+  section(data-transition="slide")
+    p Paletas de diferentes designs
+    img(src="img/paletas.png")
+  section(data-transition="slide")
+    p Ênfase na ação do usuário
+    img(src="img/angular-material-enfase-usuario.jpg")
+  section(data-transition="slide")
+    p Componentes
+    img(src="img/angular-material-componentes.jpg")
+  section(data-transition="slide")
+    p CSS Layout
+    pre
+      code.xml
+        |&lt;div layout=&quot;row&quot;&gt;
+        |  &lt;div&gt;Eu estou a esquerda.&lt;/div&gt;
+        |  &lt;div&gt;Eu estou a direita.&lt;/div&gt;
+        |&lt;/div&gt;
+        |&nbsp;
+        |&lt;div layout=&quot;column&quot;&gt;
+        |  &lt;div&gt;Eu estou em cima.&lt;/div&gt;
+        |  &lt;div&gt;Eu estou em baixo.&lt;/div&gt;
+        |&lt;/div&gt;
+  section(data-transition="slide")
+    p Atributo Flex
+    img(src="img/angular-material-flex.jpg")
+    pre
+      code.xml
+        |&lt;div layout=&quot;row&quot;&gt;
+        |   &lt;div flex&gt;[flex]&lt;/div&gt;
+        |   &lt;div flex&gt;[flex]&lt;/div&gt;
+        |   &lt;div flex&gt;[flex]&lt;/div&gt;
+        |&lt;/div&gt;
+  section(data-transition="slide")
+    p Atributo Flex
+    img(src="img/angular-material-flex-2.png")
+    pre
+      code(data-noescape).xml
+        |&lt;div layout=&quot;row&quot;&gt;
+        |  &lt;div flex=&quot;20&quot;&gt;
+        |    [flex=&quot;20&quot;]
+        |  &lt;/div&gt;
+        |  &lt;div flex=&quot;70&quot;&gt;
+        |    [flex=&quot;70&quot;]
+        |  &lt;/div&gt;
+        |  &lt;div flex <mark>hide-sm hide-xs</mark>&gt;
+        |    [flex]
+        |  &lt;/div&gt;
+        |&lt;/div&gt;
+  section(data-transition="slide")
+    p Usando angular-material
+    pre
+      code
+        |bower install angular-material angular-aria angular-animate
+    pre
+      code
+        |<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    pre
+      code
+        |<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+        |<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+        |<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js">
+        |</script>
+    pre
+      code
+        |<script type="text/javascript">
+        |   //incluir a dependência do angular-material
+        |   angular.module('meuApp', ['ngMaterial']);
+        |</script>

@@ -1,0 +1,1 @@
+function escapeHtml(e){return String(e).replace(/[&<>"'\/]/g,function(e){return entityMap[e]})}var entityMap={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","/":"&#x2F;"};window.onload=function(){var e=document.querySelectorAll("pre code");if(e.length)for(var n=0,t=e.length;n<t;n++){var r=e[n],a=r.innerHTML;a=escapeHtml(a),r.innerHTML=a}};

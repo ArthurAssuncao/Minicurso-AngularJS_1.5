@@ -1,0 +1,6 @@
+<ul>
+    <li ng-repeat="seg in seguidores | filter:{name: termo} | orderBy:'login'">
+        <img src="{{seg.avatar_url}}" height="50px" width="50px"/>
+        {{ seg.login }}
+    </li>
+</ul>

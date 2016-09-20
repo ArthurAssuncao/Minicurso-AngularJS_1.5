@@ -1,0 +1,67 @@
+section(data-transition="slide")
+  section(data-transition="slide")
+    h3 Rotas
+    img(src="img/angularjs-spa-structure.png")
+  section(data-transition="slide")
+    p Usando Angular-Routes
+    pre
+      code.sql
+        |# Baixar o angular-route
+        |bower install angular-route
+    pre
+      code
+        |&lt;!--Incluir em nossa página--&gt;
+        |&lt;script src=&quot;bower_components/angular-route/angular-route.min.js&quot;&gt;
+        |&lt;/script&gt;
+        |&nbsp;
+    pre
+      code
+        |// Adicionando a dependência em nosso módulo:
+        |var meuApp = angular.module('meuApp', ['ngRoute']);
+  section(data-transition="slide")
+    pre
+      code
+        |&lt;!--Definindo nossa URL base--&gt;
+        |&lt;head&gt;
+        |   &lt;base href=&quot;/&quot;&gt;
+        |&lt;/head&gt;
+        |&lt;body&gt;
+        |   &lt;div ng-view&gt;&lt;/div&gt;
+        |&lt;/body&gt;
+    pre
+      code
+        |meuApp.config( [ '$routeProvider' , function($routerProvider){
+        |$routerProvider
+        |   .when('/view1', {
+        |     controller: "MeuController",
+        |     templateUrl: 'templates/view1.html'
+        |   })
+        |   .when('/view2', {
+        |     controller: "MeuController",
+        |     templateUrl: 'templates/view2.html'
+        |   })
+        |   .otherwise({
+        |     redirectTo: '/view1'
+        |   });
+        |}]);
+  section(data-transition="slide")
+    h3 Linkando Views
+    p.left-text View1
+    pre
+      code
+        <a href="#/view2">View2</a>
+    p.left-text View2
+    pre
+      code <a href="#/view1">View1</a>
+    p.left-text Ou no controller
+    pre
+      code
+        |app.controller('appCtrl', function($scope, $location) {
+        |  $scope.clickView1 = function() {
+        |      $location.url("/view1");
+        |  }
+        |&nbsp;
+        |  $scope.clickView2 = function() {
+        |      $location.url("/view2");
+        |  }
+        |});

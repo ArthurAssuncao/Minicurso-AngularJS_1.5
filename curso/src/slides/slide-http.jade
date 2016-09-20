@@ -1,0 +1,27 @@
+section(data-transition="slide")
+  section(data-transition="slide")
+    h3 HTTP Request
+    pre
+      code(data-noescape)
+        |app.controller("primeiroCtrl", function($scope, <mark>$http</mark>){});
+    ul.left.margin-left
+      li $http.get
+      li $http.head
+      li $http.post
+      li $http.put
+    ul.right.margin-right
+      li $http.delete
+      li $http.jsonp
+      li $http.patch
+  section(data-transition="slide")
+    pre
+      code
+        |$http.get("URL")
+        |   .then(function successCallback(response) {
+        |     // callback assíncrono quando resposta está ok
+        |     console.log(response);
+        |   }, function errorCallback(response) {
+        |     // chamada assíncrona se ocorrer erro
+        |     // servidor pode retornar status de erro
+        |     console.log('Error: ' + response);
+        |   });

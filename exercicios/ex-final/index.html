@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="TaskApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1" />
+    <title>Exercicio Final</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.css">
+
+    <base href="/">
+</head>
+<body ng-cloak layout="column">
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools container">
+            <h1 class="logo"><a href="#/"><i class="material-icons icon-small">speaker_notes</i> TaskApp</a></h1>
+            <span flex></span>
+            <md-button hide-sm href="#/novatarefas">
+                <i class="material-icons icon-small">note_add</i> <span>Nova Tarefa</span>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <div layout="row" flex>
+        <div layout="column" flex id="content">
+            <md-content layout="column" flex class="md-padding">
+                <div ng-view class="view-animate"></div>
+            </md-content>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

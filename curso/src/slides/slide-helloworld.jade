@@ -1,0 +1,88 @@
+section(data-transition="slide")
+  section(data-transition="slide")
+    img(src="img/hello-world.gif")
+    h3 Hello, World
+  section(data-transition="slide")
+    p Obtenha o AngularJS em 1.5 por alguma das formas abaixo:
+    ul
+      li Baixe de <a>angularjs.org</a>
+      li bower install angular#1.5.8
+      li npm install angular@1.5.8
+  section(data-transition="slide")
+    pre
+      code
+        |&lt!doctype html&gt
+        |&lthtml&gt
+        |    &lthead&gt
+        |       <meta charset="utf-8">
+        |       <title>Minicurso AngularJS</title>
+        |    &lt/head&gt
+        |    &ltbody&gt
+        |    &lt/body&gt
+        |&lt/html&gt
+
+  section(data-transition="slide")
+    pre
+      code(data-noescape)
+        |&lt!doctype html&gt
+        |&lthtml&gt
+        |    &lthead&gt
+        |       &ltmeta charset="utf-8"&gt
+        |       &lttitle>Minicurso AngularJS&lt/title&gt
+        |    &lt/head&gt
+        |    &ltbody&gt
+        |       <mark>&ltscript src="angular.js">&lt/script&gt</mark>
+        |    &lt/body&gt
+        |&lt/html&gt
+
+  section(data-transition="slide")
+    pre
+      code(data-noescape)
+        |&lt!doctype html&gt
+        |&lthtml <mark>ng-app="meuPrimeiroApp"</mark> &gt
+        |    &lthead&gt
+        |       &ltmeta charset="utf-8"&gt
+        |       &lttitle>Minicurso AngularJS&lt/title&gt
+        |    &lt/head&gt
+        |    &ltbody&gt
+        |       &ltscript src="angular.js">&lt/script&gt
+        |    &lt/body&gt
+        |&lt/html&gt
+
+  section(data-transition="slide")
+    pre
+      code(data-noescape)
+        |&lt!doctype html&gt
+        |&lthtml ng-app="meuPrimeiroApp" &gt
+        |    &lthead&gt
+        |       &ltmeta charset="utf-8"&gt
+        |       &lttitle>Minicurso AngularJS&lt/title&gt
+        |    &lt/head&gt
+        |    &ltbody&gt
+        |       &ltscript src="angular.js">&lt/script&gt
+        |       <mark>&ltscript&gt
+        |         var app = angular.module("meuPrimeiroApp", []);
+        |       &lt/script&gt </mark>
+        |    &lt/body&gt
+        |&lt/html&gt
+
+  section(data-transition="slide")
+    pre
+      code(data-noescape)
+        |&lt!doctype html&gt
+        |&lthtml ng-app="meuPrimeiroApp"&gt
+        |    &lthead&gt
+        |       &ltmeta charset="utf-8"&gt
+        |       &lttitle>Minicurso AngularJS&lt/title&gt
+        |    &lt/head&gt
+        |    &ltbody <mark>ng-controller="primeiroCtrl"</mark>&gt
+        |       &ltspan&gt{{msg}}&lt/span&gt
+        |       &ltscript src="angular.js">&lt/script&gt
+        |       &ltscript&gt
+        |         <mark>var app = angular.module("meuPrimeiroApp", []);
+        |         app.controller("primeiroCtrl", function($scope){
+        |           $scope.msg = "Primeiro App";
+        |         });</mark>
+        |       &lt/script&gt
+        |    &lt/body&gt
+        |&lt/html&gt

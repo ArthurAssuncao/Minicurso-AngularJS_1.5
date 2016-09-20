@@ -1,0 +1,17 @@
+<div layout="row">
+    <md-list flex="100">
+        <md-list-item ng-click="" class="md-3-line" ng-repeat="tarefa in tarefas">
+            <div class="md-list-item-text">
+                <div layout='row'>
+                    <i class="material-icons">assignment</i>
+                    <div>
+                        <h3><strong>{{tarefa.nome}}</strong></h3>
+                        <span>{{tarefa.data_hora}}</span>
+                        <md-checkbox class="md-secondary" ng-model="tarefa.feito" ng-check="true"></md-checkbox>
+                    </div>
+                </div>
+            </div>
+            <md-divider></md-divider>
+        </md-list-item>
+    </md-list>
+</div>

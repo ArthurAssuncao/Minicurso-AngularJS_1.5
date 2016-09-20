@@ -1,0 +1,23 @@
+section(data-transition="slide")
+  section(data-transition="slide")
+    h3 Two-way Data Binding
+    p Quando uma propriedade em um Model é atualizado, a UI também é.
+    p Quando uma UI é atualizada, o Model também é.
+  section(data-transition="slide")
+    div.left
+      img(src="img/One_Way_Data_Binding.png")
+      p Outros sistemas de template
+    div.right
+      img(src="img/Two_Way_Data_Binding.png")
+      p AngularJS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  section(data-transition="slide")
+    pre
+      code(data-noescape)
+        |&lt;div&gt;
+        |   Nome: &lt;input type=&quot;text&quot; <mark>ng-model=&quot;name&quot</mark> placeholder=&quot;Nome&quot;/&gt;
+        |   &lt;br /&gt;
+        |   Bind com express&atilde;o: &lt;span&gt;<mark>{{name}}</mark>&lt;/span&gt;
+        |   &lt;br /&gt;
+        |   Bind com ng-bind: &lt;span <mark>ng-bind=&quot;name&quot;</mark> /&gt;
+        |&lt;/div&gt;
+    img(src="img/Two-way-data-binding-angularjs.gif")

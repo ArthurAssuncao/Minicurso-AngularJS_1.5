@@ -1,0 +1,8 @@
+<md-list flex>
+    <md-list-item class="md-3-line" ng-repeat="seguidor in seguidores | filter:{login: termo}" ng-click="null">
+      <img ng-src="{{ seguidor.avatar_url }}" class="md-avatar" alt="{{ seguidor.name }}" />
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ seguidor.login }}</h3>
+      </div>
+    </md-list-item>
+</md-list>

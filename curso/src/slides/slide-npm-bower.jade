@@ -1,0 +1,29 @@
+section(data-transition="slide")
+  section(data-background-color=cor_fundo_com_texto)
+    p Gerenciadores de dependências podem facilitar a vida...
+  section(data-transition="slide")
+    img(src="img/npm.svg", width="300px")
+    img(src="img/bower.svg", width="300px")
+  section(data-transition="slide")
+    pre
+      code.sql
+        |$ npm install -g bower
+    p Mais informações em <a>npmjs.com</a>
+    br
+
+    pre
+      code.sql
+        |$ bower init
+        |# instalação de dependências listadas em bower.json
+        |$ bower install
+        |# pacote registrado
+        |$ bower install [pacote]
+        |$ bower install angular
+        |# GitHub shorthand
+        |$ bower install desandro/masonry
+        |# Git endpoint
+        |$ bower install git://github.com/user/package.git
+        |# URL
+        |$ bower install http://example.com/script.js
+
+    p Mais informações em <a>bower.io</a>

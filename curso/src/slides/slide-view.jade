@@ -1,0 +1,83 @@
+section(data-transition="slide")
+  section(data-transition="slide")
+    h3 Directives
+    p "Ensina" ao HTML alguns truques (Funções, métodos etc)
+    p Reinventa o HTML com uma nova sintaxe específica para sua aplicação
+    p Toda <strong>directive</strong> nativa do Angular irá começar com <strong>ng-</strong>
+    ul
+      li Adiciona:
+      ul
+        li Comportamento
+        li Data binding ao Scope
+        li Substitui ou estende elementos HTML
+
+  section(data-transition="slide")
+    img(src="img/angularjs-directives.jpg")
+
+  section(data-transition="slide")
+    p ng-init ~ ng-model ~ ng-repeat ~ ng-show ~ ng-hide
+    pre
+      code(data-noescape)
+        |&lt;body <mark>ng-init=&quot;nomes=['Arthur', 'Alencar', 'Suplaum']&quot;</mark>&gt;
+        |    &lt;ul&gt;
+        |      &lt;li <mark>ng-repeat=&quot;nome in nomes&quot;</mark>&gt;<mark>{{ nome }}</mark>&lt;/li&gt;
+        |    &lt;/ul&gt;
+    pre
+      code(data-noescape)
+        |&lt;body <mark>ng-init=&quot;alunos = { nomes: [ {nome: 'Arthur', aprovado:true},
+        | {nome: 'Alencar', aprovado: false} ] }&quot;</mark>&gt;
+        |   &lt;ul&gt;
+        |     &lt;li <mark>ng-repeat=&quot;aluno in alunos.nomes&quot;</mark>&gt;<mark>{{ aluno.nome }}</mark>&lt;/li&gt;
+        |   &lt;/ul&gt;
+    p.font-small Como exibir apenas alunos aprovados?
+    pre
+      code(data-noescape)
+        |&lt;body ng-init=&quot;alunos = { nomes: [ {nome: 'Arthur', aprovado:true},
+        | {nome: 'Alencar', aprovado: false} ] }&quot;&gt;
+        |   &lt;ul&gt;
+        |     &lt;li <mark>ng-show=&quot;aluno.aprovado&quot;</mark> ng-repeat=&quot;aluno in alunos.nomes&quot;&gt;
+        |{{ aluno.nome }}&lt;/li&gt;
+        |   &lt;/ul&gt;
+  section(data-transition="slide")
+    h4 Filtro
+    br
+    pre
+      code
+        |&lt;li ng-repeat=&quot;alu in alunos.nomes&quot;&gt;{{ alu.nome | uppercase }}&lt;/li&gt;
+        |&lt;li ng-repeat=&quot;alu in alunos.nomes&quot;&gt;{{ alu.nome | lowercase }}&lt;/li&gt;
+        |&lt;li ng-repeat=&quot;alu in alunos.nomes | filter:{nome: 'art'}&quot;&gt;
+        |{{ alu.nome }}&lt;/li&gt;
+    br
+    pre
+      code
+        |&lt;li ng-repeat=&quot;alu in alunos.nomes | limitTo:2&quot;&gt;{{ alu.nome }}&lt;/li&gt;
+  section(data-transition="slide")
+    h4 Ordenação
+    br
+    pre
+      code(data-noescape)
+        |&lt;li ng-repeat=&quot;alu in alunos.nomes <mark>| orderBy:'nome'</mark>&quot;&gt;
+        |{{ alu.nome | uppercase }}&lt;/li&gt;
+    p.font-small Ascendente
+    br
+    pre
+      code(data-noescape)
+        |&lt;li ng-repeat=&quot;alu in alunos.nomes <mark>| orderBy:'-nome'</mark>&quot;&gt;
+        |{{ alu.nome | uppercase }}&lt;/li&gt;
+    p.font-small Descendente
+  section(data-transition="slide")
+    h4 ng-clock
+    p Sincroniza a renderização
+    pre
+      code
+        |&lt;style type=&quot;text/css&quot;&gt;
+        |   [ng\:cloak], [ng-cloak], [data-ngcloak],
+        |   [x-ng-cloak], .ng-cloak, .x-ngcloak
+        |   {
+        |     display: none !important;
+        |   }
+        |&lt;/style&gt;
+        |&nbsp;
+        |&lt;body ng-cloak&gt;
+        |&lt;body data-ng-cloak&gt;
+        |&lt;body class=&quot;ng-cloak&quot;&gt;

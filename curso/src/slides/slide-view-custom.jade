@@ -1,0 +1,81 @@
+section(data-transition="slide")
+  section(data-transition="slide")
+    h3 Custom Directives
+    pre
+      code
+        |&lt;my-dir&gt;&lt;/my-dir&gt;
+        |&lt;span my-dir=&quot;exp&quot;&gt;&lt;/span&gt;
+        |&lt;!-- directive: my-dir exp --&gt;
+        |&lt;span class=&quot;my-dir: exp;&quot;&gt;&lt;/span&gt;
+    h6 file.html
+
+    pre
+      code.js
+        |var app = angular.module("meuPrimeiroApp", []);
+        |app.directive("myDir", function(){
+        |   return{
+        |     //'A': atributo, 'E': elemento, 'C': Classe, 'M': Comentário
+        |     restrict: "AECM",
+        |     template: 'Name: {{custom.name}} Address: {{custom.address}}',
+        |     //ou
+        |     templateUrl: template.html
+        |   }
+        |});
+    h6 script.js
+  section(data-transition="slide")
+    h3 Component
+    p Novo no AngularJS 1.5
+    pre
+      code.javascript
+        |// Antes
+        |app.directive(name, fn)
+        |&nbsp;
+        |// Agora
+        |app.component(name, options)
+  section(data-transition="slide")
+    pre
+      code.javascript
+        |app.directive('listDirective', function () {
+        |  return {
+        |      scope: { // Scope isolado
+        |          message: '@'
+        |      },
+        |      template: '<div>Hello {{$ctrl.message}}</div>',
+        |      controller: function () {
+        |              this.message = "Arthur directive"
+        |      },
+        |      //defaults, automaticamente setado quando usa .component()
+        |      controllerAs: '$ctrl',
+        |      bindToController: true
+        |  };
+        |});
+    pre
+      code.javascript
+        |app.component('listComponent', {
+        |  bindings: { // scope isolado
+        |      message: '@'
+        |  },
+        |  template:'<div>Hello {{$ctrl.message}}</div>',
+        |  controller: function () {
+        |      this.message = "Arthur component"
+        |  }
+        |});
+  section(data-transition="slide")
+    p No HTML
+    pre
+      code
+        |<list-component data="'dados que precisamos'"></list-component>
+    pre
+      code
+        |bindings: { // scope isolado
+        |      message: '@'
+        |},
+        |scope: { // Scope isolado
+        |          message: '@'
+        |      },
+    p No lugar de <strong>@</strong>, pode-se usar:
+    ul
+      li <strong>=</strong> Two-way data binding: atualiza nos dois sentidos
+      li <strong><</strong> One-way data binding: quando apenas quer ler
+      li <strong>@</strong> Para strings
+      li <strong>&</strong> Executa expressões

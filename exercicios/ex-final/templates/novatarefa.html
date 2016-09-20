@@ -1,0 +1,23 @@
+<div layout="row" layout-wrap class="container" ng-swipe-right="toNovoLembrete()">
+  <div flex="100">
+    <h1>
+      Nova Tarefa
+    </h1>
+  </div>
+  <div flex="100">
+    <form name="tarefaForm" layout-padding layout="column">
+      <md-input-container>
+        <label>Titulo da Tarefa</label>
+        <input ng-model="novaTarefa.nome" type="text">
+      </md-input-container>
+      <md-input-container>
+        <label>Data e hora para finalizar a tarefa</label>
+        <input type="text" id="datetime" ng-model="novaTarefa.data_hora" class="md-input">
+      </md-input-container>
+      <div layout="row">
+        <span flex></span>
+        <md-button type="button" data-ng-click="submitNovaTarefa()" class="md-raised md-primary" onkeydown="doNothing()">Criar Tarefa</md-button>
+      </div>
+    </form>
+    <!-- {{novaTarefa}} -->
+</div>

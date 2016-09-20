@@ -1,0 +1,7 @@
+<md-list flex>
+    <md-list-item class="md-3-line" ng-repeat="repo in repos | filter:{name: termo}" ng-click="null">
+      <div class="md-list-item-text" layout="column">
+        <h3>{{ repo.name }}</h3>
+      </div>
+    </md-list-item>
+</md-list>

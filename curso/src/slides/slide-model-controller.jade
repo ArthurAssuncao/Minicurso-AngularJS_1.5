@@ -1,0 +1,25 @@
+section(data-transition="slide")
+  section(data-transition="slide")
+    h3 Model e Controller
+    img(src="img/angularjs-module-architecture.png")
+  section(data-transition="slide")
+    pre
+      code
+        |//cria o modulo meuPrimeiroApp
+        |var app = angular.module("meuPrimeiroApp", []);
+        |//injeção de dependências em []
+        |var app = angular.module("meuApp", ['meuModulo', 'ngRoute', 'etc']);
+        |&nbsp;
+        |//cria um controlador
+        |app.controller("primeiroCtrl", function($scope){
+        |   $scope.msg = "Primeiro App";
+        |});
+  section(data-transition="slide")
+    p Criando variáveis de escopo com a directiva ng-model
+    pre
+      code.html
+        |&lt;input type=&quot;text&quot; ng-model=&quot;meuObj.nome&quot;&gt;
+        |&lt;input type=&quot;text&quot; ng-model=&quot;meuObj.sobrenome&quot;&gt;
+        |&lt;input type=&quot;text&quot; ng-model=&quot;meuObj.idade&quot;&gt;
+        |&lt;input type=&quot;checkbox&quot; ng-model=&quot;meuObj.check&quot;&gt;Meu Checkbox
+        |{{ meuObj }}

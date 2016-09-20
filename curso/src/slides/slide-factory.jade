@@ -1,0 +1,78 @@
+section(data-transition="slide")
+  section(data-transition="slide")
+    h3 Factory e Service
+    ul
+      li Encapsulamento de funcionalidades.
+      li Geralmente utilizado para funcionalidades que se repetem.
+      li Factory: Escrevemos o objeto a ser retornado dentro dele
+      li Service: Usamos o <em>this</em>
+  section(data-transition="slide")
+    h3 Service
+    pre
+      code
+        |meuApp.service('meuService', function(){
+        |   //var this = {}
+        |   this.listaDeTarefas = [];
+        |   this.adicionaTarefa = function(tarefa){
+        |     //Faz algo
+        |   }
+        |   this.removeTarefa = function(tarefa){
+        |     //Faz algo
+        |   }
+        |   //return this;
+        |});
+  section(data-transition="slide")
+    h3 Factory
+    pre
+      code
+        |meuApp.factory('meuFactory', function(){
+        |   var factory = {}
+        |   listaDeTarefas = [];
+        |   factory.adicionaTarefa = function(tarefa){
+        |     //Faz algo
+        |   }
+        |   factory.removeTarefa = function(tarefa){
+        |     //Faz algo
+        |   }
+        |   return factory;
+        |});
+  section(data-transition="slide")
+    h3 Factory
+    pre
+      code
+        |meuApp.factory('Tarefa', function(){
+        |   return function(descricao, prioridade){
+        |     return{
+        |       descricao: descricao,
+        |       prioridade: prioridade,
+        |       completo: function(){
+        |         //Fazer algo quando completo
+        |       }
+        |     }
+        |   }
+        |});
+  section(data-transition="slide")
+    p Usando o Factory
+    pre
+      code
+        |meuApp.controller('MeuController', function($scope, $http, Tarefa){
+        |&nbsp;
+        |   var limparCasa = new Tarefa("Limpar a Casa!!!", 2);
+        |   var fazerAtividade = new Tarefa("Fazer Atividade!!!", 1);
+        |&nbsp;
+        |   fazerAtividade.completo();
+        |});
+  section(data-transition="slide")
+    p Factory com chamada assíncrona (uma das formas possíveis)
+    pre
+      code
+        |meuApp.factory('meuFactory', function($http, $rootScope){
+        |   return {
+        |     getData: function(){
+        |       $http.get('http://shopicruit.myshopify.com/products.json')
+        |         .success(function(data) {
+        |           $rootScope.products = data;
+        |         });
+        |     }
+        |   }
+        |});

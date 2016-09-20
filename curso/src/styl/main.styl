@@ -1,0 +1,94 @@
+/*
+* uncomment your favorite theme
+* if you want to see them live, take a look at:
+* http://lab.hakim.se/reveal-js/#/themes
+* to convert more themes, take from: https://github.com/hakimel/reveal.js/tree/master/css/theme
+*/
+
+/*
+* Css file to create the generic presentation
+*/
+@import "vendor/reveal"
+
+/*
+* In src/styl/reveal-themes have more themes !!
+*/
+@import "reveal-themes/white"
+
+/*
+* In src/styl/highlight-themes have more awesome highlight-themes !!
+*/
+@import "highlight-themes/color-brewer"
+.reveal {
+	background:url("../img/fundo.png");
+	background-position:bottom;
+	background-size: 100%;
+  background-repeat: no-repeat;
+}
+.logo-left{
+  position: absolute;
+  float: left;
+  left: 30px;
+  top: 30px;
+  z-index: 1;
+  height: 100px;
+  opacity: 0.9;
+}
+.logo-right{
+  position: absolute;
+  float: right;
+  right: 30px;
+  top: 30px;
+  z-index: 1;
+  height: 100px;
+  opacity: 0.9;
+}
+img{
+  max-height: 515px !important;
+}
+mark{
+  background-color: rgba(255, 255, 0, 0.9);
+  color: #8b8792;
+}
+.absolute{
+  position: absolute;
+}
+.center1{
+  text-align: center;
+  transform: translateX(50%);
+}
+.text-black{
+  color: #222;
+}
+.left-text{
+  text-align: left;
+}
+.left{
+  text-align: left;
+  float: left;
+}
+.right-text{
+  text-align: right;
+}
+.right{
+  text-align: right;
+  float: right;
+}
+.margin-left{
+  margin-left: 200px !important;
+}
+.margin-right{
+  margin-right: 200px !important;
+}
+.font-normal{
+  font-size: 1em;
+}
+.font-small{
+  font-size: 0.75em;
+}
+.font-tiny{
+  font-size: 0.5em;
+}
+.margin-sides-10{
+  margin: 10px !important;
+}

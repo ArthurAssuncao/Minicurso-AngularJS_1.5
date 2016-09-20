@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Desenvolvimento de aplicações web com AngularJS</title>
+    <meta name="description" content="Minicurso Desenvolvimento de aplicações web com AngularJS.">
+    <meta name="author" content="You">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/qualy-presenter.png">
+    <meta property="og:description" content="Minicurso Desenvolvimento de aplicações web com AngularJS.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body><img src="img/logo_ifsudeste.png" class="logo-left"><img src="img/angularjs-icon.svg" class="logo-right">
+    <div class="reveal">
+      <div class="slides">
+        <section><img src="img/angularJS.jpg" alt="">
+          <p><strong>Desenvolvimento de aplicações web com AngularJS</strong></p>
+        </section>
+        <section data-transition="slide">
+          <section>
+            <h2>@ArthurAssuncao</h2>
+            <div id="img" src="https://arthurassuncao.com/assets/img/me256x256.png" width="128px" height="128px"></div>
+            <ul class="fragment">
+              <li>Mestre em Ciência da Computação @ UFOP</li>
+              <li>Professor @ IF Sudeste MG - Santos Dumont</li>
+              <li>Já participei de Hackathons</li>
+              <ul>
+                <li>GDG BH (Google Developer Group) 2015</li>
+                <li>Rede Globo 2016</li>
+              </ul>
+            </ul><br><br>
+            <ul class="fragment">
+              <p><a href="arthurassuncao.com">ArthurAssuncao.com</a></p>
+              <p><a href="arthur@arthurassuncao.com">arthur@arthurassuncao.com</a></p>
+              <p><a href="github.com/ArthurAssuncao">github.com/ArthurAssuncao</a></p>
+            </ul>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <h2><strong>Pré-requisitos</strong></h2><img src="img/css-family-guy.gif">
+          <p>HTML, CSS e JavaScript</p>
+        </section>
+        <section data-background-color="#446971" data-transition="slide">
+          <section>
+            <p>E a ementa do minicurso?</p>
+          </section>
+          <section data-transition="fade-in">
+            <ul class="font-small">
+              <li>Introdução</li>
+              <li class="fragment">Gerenciadores de pacotes: NPM e Bower</li>
+              <li class="fragment">Data Bindings</li>
+              <li class="fragment">Views e Controllers</li>
+              <ul class="frament">
+                <li class="fragment">Criando Controllers</li>
+                <li class="fragment">Criando Views</li>
+                <li class="fragment">Separando a lógica de negócio da interface</li>
+                <li class="fragment">Estruturas de repetição</li>
+                <li class="fragment">Estruturas condicionais</li>
+              </ul>
+              <li class="fragment">Filtros e ordenação</li>
+              <li class="fragment">Modules, Routes, Factories e Services</li>
+              <li class="fragment">Directivas customizadas</li>
+              <li class="fragment">Consumindo API RESTful</li>
+              <li class="fragment">Angular Material</li>
+              <li class="fragment"><em>Progressive Web App</em></li>
+              <li class="fragment">Mão na Massa: criando uma aplicação de exemplo</li>
+            </ul>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide"><img src="img/angularjs-sim.gif">
+            <p><strong>AngularJS</strong> é um <strong>framework</strong> para o desenvolvimento de <strong>aplicações web</strong> utilizando a linguagem <strong>JavaScript</strong></p>
+          </section>
+          <section data-transition="slide">
+            <h3>O que é AngularJS?</h3><br>
+            <ul>
+              <li>Criado e mantido pela Google</li>
+              <li>AngularJS é uma biblioteca, <strong>framework</strong>, plugin ou extensão para browser?</li>
+              <li><strong>SPA (Single Page Application)</strong> Framework</li>
+              <li>MVW (Model View Whatever) Framework</li>
+              <ul>
+                <li>Model - View - Controller</li>
+              </ul>
+              <li>Como o browser faz o AngularJS funcionar?</li>
+              <li>AngularJS usa jQuery?</li>
+              <li>Usado no desenvolvimento <strong>Front-end</strong></li>
+            </ul>
+          </section>
+          <section data-transition="slide"><img src="img/desenho-tecnico-construcao-civil.jpg">
+            <p class="text-black">Estrutura a arquitetura da aplicação em <strong>camadas</strong> bem definidas</p>
+          </section>
+          <section data-transition="slide"><img src="img/lego-pecas.jpg">
+            <p class="text-black">Possibilita a criação de componentes <strong>reusáveis</strong> e <strong>modulares</strong></p>
+          </section>
+          <section data-transition="slide">
+            <p>AngularJS <strong>PODE</strong> ser um SPA</p><img src="img/angularjs-spa-structure.png">
+          </section>
+          <section data-transition="slide">
+            <h3>AngularJS Features</h3>
+            <ul class="left">
+              <li>Data Binding</li>
+              <li>MVC</li>
+              <li>Routing</li>
+              <li>Testing</li>
+              <li>jqLite</li>
+              <li>Templates</li>
+            </ul>
+            <ul class="right">
+              <li>History</li>
+              <li>Factories</li>
+              <li>Views</li>
+              <li>Directives</li>
+              <li>Services</li>
+              <li>e mais</li>
+            </ul>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Quem utiliza?</h3>
+          </section>
+          <section data-transition="slide"><img src="img/exemplos/the-guardian.png">
+            <p>The Guardian</p>
+          </section>
+          <section data-transition="slide"><img src="img/exemplos/paypal.png">
+            <p>Paypal</p>
+          </section>
+          <section data-transition="slide"><img src="img/exemplos/lego.jpeg">
+            <p>Lego.com</p>
+          </section>
+          <section data-transition="slide"><img src="img/exemplos/weather.png">
+            <p>Weather.com</p>
+          </section>
+          <section data-transition="slide"><img src="img/exemplos/youtube-ps3.jpeg">
+            <p>Youtube para PS3</p>
+          </section>
+          <section data-transition="slide"><img src="img/exemplos/vevo.jpeg">
+            <p>Vevo</p>
+          </section>
+          <section data-transition="slide"><img src="img/exemplos/istock-photo.png">
+            <p>iStock Photo</p>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-background-color="#446971">
+            <p>Gerenciadores de dependências podem facilitar a vida...</p>
+          </section>
+          <section data-transition="slide"><img src="img/npm.svg" width="300px"><img src="img/bower.svg" width="300px"></section>
+          <section data-transition="slide">
+            <pre><code class="sql">$ npm install -g bower</code></pre>
+            <p>Mais informações em <a>npmjs.com</a></p><br>
+            <pre><code class="sql">$ bower init
+# instalação de dependências listadas em bower.json
+$ bower install
+# pacote registrado
+$ bower install [pacote]
+$ bower install angular
+# GitHub shorthand
+$ bower install desandro/masonry
+# Git endpoint
+$ bower install git://github.com/user/package.git
+# URL
+$ bower install http://example.com/script.js</code></pre>
+            <p>Mais informações em <a>bower.io</a></p>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Two-way Data Binding</h3>
+            <p>Quando uma propriedade em um Model é atualizado, a UI também é.</p>
+            <p>Quando uma UI é atualizada, o Model também é.</p>
+          </section>
+          <section data-transition="slide">
+            <div class="left"><img src="img/One_Way_Data_Binding.png">
+              <p>Outros sistemas de template</p>
+            </div>
+            <div class="right"><img src="img/Two_Way_Data_Binding.png">
+              <p>AngularJS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+          </section>
+          <section data-transition="slide">
+            <pre><code data-noescape>&lt;div&gt;
+  Nome: &lt;input type=&quot;text&quot; <mark>ng-model=&quot;name&quot</mark> placeholder=&quot;Nome&quot;/&gt;
+  &lt;br /&gt;
+  Bind com express&atilde;o: &lt;span&gt;<mark>{{name}}</mark>&lt;/span&gt;
+  &lt;br /&gt;
+  Bind com ng-bind: &lt;span <mark>ng-bind=&quot;name&quot;</mark> /&gt;
+&lt;/div&gt;</code></pre><img src="img/Two-way-data-binding-angularjs.gif">
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Directives</h3>
+            <p>"Ensina" ao HTML alguns truques (Funções, métodos etc)</p>
+            <p>Reinventa o HTML com uma nova sintaxe específica para sua aplicação</p>
+            <p>Toda <strong>directive</strong> nativa do Angular irá começar com <strong>ng-</strong></p>
+            <ul>
+              <li>Adiciona:</li>
+              <ul>
+                <li>Comportamento</li>
+                <li>Data binding ao Scope</li>
+                <li>Substitui ou estende elementos HTML</li>
+              </ul>
+            </ul>
+          </section>
+          <section data-transition="slide"><img src="img/angularjs-directives.jpg"></section>
+          <section data-transition="slide">
+            <p>ng-init ~ ng-model ~ ng-repeat ~ ng-show ~ ng-hide</p>
+            <pre><code data-noescape>&lt;body <mark>ng-init=&quot;nomes=['Arthur', 'Alencar', 'Suplaum']&quot;</mark>&gt;
+   &lt;ul&gt;
+     &lt;li <mark>ng-repeat=&quot;nome in nomes&quot;</mark>&gt;<mark>{{ nome }}</mark>&lt;/li&gt;
+   &lt;/ul&gt;</code></pre>
+            <pre><code data-noescape>&lt;body <mark>ng-init=&quot;alunos = { nomes: [ {nome: 'Arthur', aprovado:true},
+{nome: 'Alencar', aprovado: false} ] }&quot;</mark>&gt;
+  &lt;ul&gt;
+    &lt;li <mark>ng-repeat=&quot;aluno in alunos.nomes&quot;</mark>&gt;<mark>{{ aluno.nome }}</mark>&lt;/li&gt;
+  &lt;/ul&gt;</code></pre>
+            <p class="font-small">Como exibir apenas alunos aprovados?</p>
+            <pre><code data-noescape>&lt;body ng-init=&quot;alunos = { nomes: [ {nome: 'Arthur', aprovado:true},
+{nome: 'Alencar', aprovado: false} ] }&quot;&gt;
+  &lt;ul&gt;
+    &lt;li <mark>ng-show=&quot;aluno.aprovado&quot;</mark> ng-repeat=&quot;aluno in alunos.nomes&quot;&gt;
+{{ aluno.nome }}&lt;/li&gt;
+  &lt;/ul&gt;</code></pre>
+          </section>
+          <section data-transition="slide">
+            <h4>Filtro</h4><br>
+            <pre><code>&lt;li ng-repeat=&quot;alu in alunos.nomes&quot;&gt;{{ alu.nome | uppercase }}&lt;/li&gt;
+&lt;li ng-repeat=&quot;alu in alunos.nomes&quot;&gt;{{ alu.nome | lowercase }}&lt;/li&gt;
+&lt;li ng-repeat=&quot;alu in alunos.nomes | filter:{nome: 'art'}&quot;&gt;
+{{ alu.nome }}&lt;/li&gt;</code></pre><br>
+            <pre><code>&lt;li ng-repeat=&quot;alu in alunos.nomes | limitTo:2&quot;&gt;{{ alu.nome }}&lt;/li&gt;</code></pre>
+          </section>
+          <section data-transition="slide">
+            <h4>Ordenação</h4><br>
+            <pre><code data-noescape>&lt;li ng-repeat=&quot;alu in alunos.nomes <mark>| orderBy:'nome'</mark>&quot;&gt;
+{{ alu.nome | uppercase }}&lt;/li&gt;</code></pre>
+            <p class="font-small">Ascendente</p><br>
+            <pre><code data-noescape>&lt;li ng-repeat=&quot;alu in alunos.nomes <mark>| orderBy:'-nome'</mark>&quot;&gt;
+{{ alu.nome | uppercase }}&lt;/li&gt;</code></pre>
+            <p class="font-small">Descendente</p>
+          </section>
+          <section data-transition="slide">
+            <h4>ng-clock</h4>
+            <p>Sincroniza a renderização</p>
+            <pre><code>&lt;style type=&quot;text/css&quot;&gt;
+  [ng\:cloak], [ng-cloak], [data-ngcloak],
+  [x-ng-cloak], .ng-cloak, .x-ngcloak
+  {
+    display: none !important;
+  }
+&lt;/style&gt;
+&nbsp;
+&lt;body ng-cloak&gt;
+&lt;body data-ng-cloak&gt;
+&lt;body class=&quot;ng-cloak&quot;&gt;</code></pre>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Model e Controller</h3><img src="img/angularjs-module-architecture.png">
+          </section>
+          <section data-transition="slide">
+            <pre><code>//cria o modulo meuPrimeiroApp
+var app = angular.module("meuPrimeiroApp", []);
+//injeção de dependências em []
+var app = angular.module("meuApp", ['meuModulo', 'ngRoute', 'etc']);
+&nbsp;
+//cria um controlador
+app.controller("primeiroCtrl", function($scope){
+  $scope.msg = "Primeiro App";
+});</code></pre>
+          </section>
+          <section data-transition="slide">
+            <p>Criando variáveis de escopo com a directiva ng-model</p>
+            <pre><code class="html">&lt;input type=&quot;text&quot; ng-model=&quot;meuObj.nome&quot;&gt;
+&lt;input type=&quot;text&quot; ng-model=&quot;meuObj.sobrenome&quot;&gt;
+&lt;input type=&quot;text&quot; ng-model=&quot;meuObj.idade&quot;&gt;
+&lt;input type=&quot;checkbox&quot; ng-model=&quot;meuObj.check&quot;&gt;Meu Checkbox
+{{ meuObj }}</code></pre>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide"><img src="img/hello-world.gif">
+            <h3>Hello, World</h3>
+          </section>
+          <section data-transition="slide">
+            <p>Obtenha o AngularJS em 1.5 por alguma das formas abaixo:</p>
+            <ul>
+              <li>Baixe de <a>angularjs.org</a></li>
+              <li>bower install angular#1.5.8</li>
+              <li>npm install angular@1.5.8</li>
+            </ul>
+          </section>
+          <section data-transition="slide">
+            <pre><code>&lt!doctype html&gt
+&lthtml&gt
+   &lthead&gt
+      <meta charset="utf-8">
+      <title>Minicurso AngularJS</title>
+   &lt/head&gt
+   &ltbody&gt
+   &lt/body&gt
+&lt/html&gt</code></pre>
+          </section>
+          <section data-transition="slide">
+            <pre><code data-noescape>&lt!doctype html&gt
+&lthtml&gt
+   &lthead&gt
+      &ltmeta charset="utf-8"&gt
+      &lttitle>Minicurso AngularJS&lt/title&gt
+   &lt/head&gt
+   &ltbody&gt
+      <mark>&ltscript src="angular.js">&lt/script&gt</mark>
+   &lt/body&gt
+&lt/html&gt</code></pre>
+          </section>
+          <section data-transition="slide">
+            <pre><code data-noescape>&lt!doctype html&gt
+&lthtml <mark>ng-app="meuPrimeiroApp"</mark> &gt
+   &lthead&gt
+      &ltmeta charset="utf-8"&gt
+      &lttitle>Minicurso AngularJS&lt/title&gt
+   &lt/head&gt
+   &ltbody&gt
+      &ltscript src="angular.js">&lt/script&gt
+   &lt/body&gt
+&lt/html&gt</code></pre>
+          </section>
+          <section data-transition="slide">
+            <pre><code data-noescape>&lt!doctype html&gt
+&lthtml ng-app="meuPrimeiroApp" &gt
+   &lthead&gt
+      &ltmeta charset="utf-8"&gt
+      &lttitle>Minicurso AngularJS&lt/title&gt
+   &lt/head&gt
+   &ltbody&gt
+      &ltscript src="angular.js">&lt/script&gt
+      <mark>&ltscript&gt
+        var app = angular.module("meuPrimeiroApp", []);
+      &lt/script&gt </mark>
+   &lt/body&gt
+&lt/html&gt</code></pre>
+          </section>
+          <section data-transition="slide">
+            <pre><code data-noescape>&lt!doctype html&gt
+&lthtml ng-app="meuPrimeiroApp"&gt
+   &lthead&gt
+      &ltmeta charset="utf-8"&gt
+      &lttitle>Minicurso AngularJS&lt/title&gt
+   &lt/head&gt
+   &ltbody <mark>ng-controller="primeiroCtrl"</mark>&gt
+      &ltspan&gt{{msg}}&lt/span&gt
+      &ltscript src="angular.js">&lt/script&gt
+      &ltscript&gt
+        <mark>var app = angular.module("meuPrimeiroApp", []);
+        app.controller("primeiroCtrl", function($scope){
+          $scope.msg = "Primeiro App";
+        });</mark>
+      &lt/script&gt
+   &lt/body&gt
+&lt/html&gt</code></pre>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Exercício 1</h3>
+            <p>Crie um input com o label Busca</p>
+            <p>O conteúdo do input deve ser escrito logo abaixo</p>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Factory e Service</h3>
+            <ul>
+              <li>Encapsulamento de funcionalidades.</li>
+              <li>Geralmente utilizado para funcionalidades que se repetem.</li>
+              <li>Factory: Escrevemos o objeto a ser retornado dentro dele</li>
+              <li>Service: Usamos o <em>this</em></li>
+            </ul>
+          </section>
+          <section data-transition="slide">
+            <h3>Service</h3>
+            <pre><code>meuApp.service('meuService', function(){
+  //var this = {}
+  this.listaDeTarefas = [];
+  this.adicionaTarefa = function(tarefa){
+    //Faz algo
+  }
+  this.removeTarefa = function(tarefa){
+    //Faz algo
+  }
+  //return this;
+});</code></pre>
+          </section>
+          <section data-transition="slide">
+            <h3>Factory</h3>
+            <pre><code>meuApp.factory('meuFactory', function(){
+  var factory = {}
+  listaDeTarefas = [];
+  factory.adicionaTarefa = function(tarefa){
+    //Faz algo
+  }
+  factory.removeTarefa = function(tarefa){
+    //Faz algo
+  }
+  return factory;
+});</code></pre>
+          </section>
+          <section data-transition="slide">
+            <h3>Factory</h3>
+            <pre><code>meuApp.factory('Tarefa', function(){
+  return function(descricao, prioridade){
+    return{
+      descricao: descricao,
+      prioridade: prioridade,
+      completo: function(){
+        //Fazer algo quando completo
+      }
+    }
+  }
+});</code></pre>
+          </section>
+          <section data-transition="slide">
+            <p>Usando o Factory</p>
+            <pre><code>meuApp.controller('MeuController', function($scope, $http, Tarefa){
+&nbsp;
+  var limparCasa = new Tarefa("Limpar a Casa!!!", 2);
+  var fazerAtividade = new Tarefa("Fazer Atividade!!!", 1);
+&nbsp;
+  fazerAtividade.completo();
+});</code></pre>
+          </section>
+          <section data-transition="slide">
+            <p>Factory com chamada assíncrona (uma das formas possíveis)</p>
+            <pre><code>meuApp.factory('meuFactory', function($http, $rootScope){
+  return {
+    getData: function(){
+      $http.get('http://shopicruit.myshopify.com/products.json')
+        .success(function(data) {
+          $rootScope.products = data;
+        });
+    }
+  }
+});</code></pre>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>HTTP Request</h3>
+            <pre><code data-noescape>app.controller("primeiroCtrl", function($scope, <mark>$http</mark>){});</code></pre>
+            <ul class="left margin-left">
+              <li>$http.get</li>
+              <li>$http.head</li>
+              <li>$http.post</li>
+              <li>$http.put</li>
+            </ul>
+            <ul class="right margin-right">
+              <li>$http.delete</li>
+              <li>$http.jsonp</li>
+              <li>$http.patch</li>
+            </ul>
+          </section>
+          <section data-transition="slide">
+            <pre><code>$http.get("URL")
+  .then(function successCallback(response) {
+    // callback assíncrono quando resposta está ok
+    console.log(response);
+  }, function errorCallback(response) {
+    // chamada assíncrona se ocorrer erro
+    // servidor pode retornar status de erro
+    console.log('Error: ' + response);
+  });</code></pre>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Exercício 2</h3>
+            <p>Adicione ao exercício anterior uma lista com todos os seus projetos no Github</p>
+            <p>Pode utilizar a seguinte URL <a>https://api.github.com/users/arthurassuncao/repos</a></p>
+            <p>Lembre de:</p>
+            <ul>
+              <li>$http.get</li>
+              <li>service/factory</li>
+            </ul>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Custom Directives</h3>
+            <pre><code>&lt;my-dir&gt;&lt;/my-dir&gt;
+&lt;span my-dir=&quot;exp&quot;&gt;&lt;/span&gt;
+&lt;!-- directive: my-dir exp --&gt;
+&lt;span class=&quot;my-dir: exp;&quot;&gt;&lt;/span&gt;</code></pre>
+            <h6>file.html</h6>
+            <pre><code class="js">var app = angular.module("meuPrimeiroApp", []);
+app.directive("myDir", function(){
+  return{
+    //'A': atributo, 'E': elemento, 'C': Classe, 'M': Comentário
+    restrict: "AECM",
+    template: 'Name: {{custom.name}} Address: {{custom.address}}',
+    //ou
+    templateUrl: template.html
+  }
+});</code></pre>
+            <h6>script.js</h6>
+          </section>
+          <section data-transition="slide">
+            <h3>Component</h3>
+            <p>Novo no AngularJS 1.5</p>
+            <pre><code class="javascript">// Antes
+app.directive(name, fn)
+&nbsp;
+// Agora
+app.component(name, options)</code></pre>
+          </section>
+          <section data-transition="slide">
+            <pre><code class="javascript">app.directive('listDirective', function () {
+ return {
+     scope: { // Scope isolado
+         message: '@'
+     },
+     template: '<div>Hello {{$ctrl.message}}</div>',
+     controller: function () {
+             this.message = "Arthur directive"
+     },
+     //defaults, automaticamente setado quando usa .component()
+     controllerAs: '$ctrl',
+     bindToController: true
+ };
+});</code></pre>
+            <pre><code class="javascript">app.component('listComponent', {
+ bindings: { // scope isolado
+     message: '@'
+ },
+ template:'<div>Hello {{$ctrl.message}}</div>',
+ controller: function () {
+     this.message = "Arthur component"
+ }
+});</code></pre>
+          </section>
+          <section data-transition="slide">
+            <p>No HTML</p>
+            <pre><code><list-component data="'dados que precisamos'"></list-component></code></pre>
+            <pre><code>bindings: { // scope isolado
+     message: '@'
+},
+scope: { // Scope isolado
+         message: '@'
+     },</code></pre>
+            <p>No lugar de <strong>@</strong>, pode-se usar:</p>
+            <ul>
+              <li><strong>=</strong> Two-way data binding: atualiza nos dois sentidos</li>
+              <li><strong><</strong> One-way data binding: quando apenas quer ler</li>
+              <li><strong>@</strong> Para strings</li>
+              <li><strong>&</strong> Executa expressões</li>
+            </ul>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Exercício 3</h3>
+            <p>Adicionar a funcionalidade de filtro ao ng-repeat</p>
+            <p>Use o termo de busca do input criado no exercício 1</p>
+            <p>Recrie a lista com directive ou component</p>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Rotas</h3><img src="img/angularjs-spa-structure.png">
+          </section>
+          <section data-transition="slide">
+            <p>Usando Angular-Routes</p>
+            <pre><code class="sql"># Baixar o angular-route
+bower install angular-route</code></pre>
+            <pre><code>&lt;!--Incluir em nossa página--&gt;
+&lt;script src=&quot;bower_components/angular-route/angular-route.min.js&quot;&gt;
+&lt;/script&gt;
+&nbsp;</code></pre>
+            <pre><code>// Adicionando a dependência em nosso módulo:
+var meuApp = angular.module('meuApp', ['ngRoute']);</code></pre>
+          </section>
+          <section data-transition="slide">
+            <pre><code>&lt;!--Definindo nossa URL base--&gt;
+&lt;head&gt;
+  &lt;base href=&quot;/&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div ng-view&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+            <pre><code>meuApp.config( [ '$routeProvider' , function($routerProvider){
+$routerProvider
+  .when('/view1', {
+    controller: "MeuController",
+    templateUrl: 'templates/view1.html'
+  })
+  .when('/view2', {
+    controller: "MeuController",
+    templateUrl: 'templates/view2.html'
+  })
+  .otherwise({
+    redirectTo: '/view1'
+  });
+}]);</code></pre>
+          </section>
+          <section data-transition="slide">
+            <h3>Linkando Views</h3>
+            <p class="left-text">View1</p>
+            <pre><code><a href="#/view2">View2</a></code></pre>
+            <p class="left-text">View2</p>
+            <pre><code><a href="#/view1">View1</a></code></pre>
+            <p class="left-text">Ou no controller</p>
+            <pre><code>app.controller('appCtrl', function($scope, $location) {
+ $scope.clickView1 = function() {
+     $location.url("/view1");
+ }
+&nbsp;
+ $scope.clickView2 = function() {
+     $location.url("/view2");
+ }
+});</code></pre>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Exercício 4</h3>
+            <p>Vamos usar rota?</p>
+            <ul class="font-small">
+              <li>Renomeie o <strong>index.html</strong> para <strong>repos.html</strong></li>
+              <li>Crie a página <strong>seguidores.html</strong> com a foto do usuário ao lado esquerdo do nome (api: https://api.github.com/users/arthurassuncao/followers)</li>
+              <li>Adicione um OrderBy para ordenar a lista de seguidores</li>
+              <li>Crie a página <strong>index.html</strong> com dois links, uma para cada página</li>
+              <li>Use template para as <strong>directives</strong> (use <strong>templateUrl</strong>)</li>
+              <li>Precisa de um servidor para funcionar</li>
+              <li><strong>python -m SimpleHTTPServer 8000</strong></li>
+              <li>Deixe todo JS na página inicial (<strong>script.js</strong>)</li>
+            </ul>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Angular Material</h3>
+            <ul>
+              <li>Biblioteca Angular com componentes que seguem o Material Design</li>
+              <li>Grid flexbox</li>
+              <li>Web components</li>
+              <li>CSS de layout</li>
+              <li>Temas</li>
+              <li><a>https://material.angularjs.org/latest/</a></li>
+            </ul>
+          </section>
+          <section data-transition="slide"><iframe width="560" height="315" src="https://www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe></section>
+          <section data-transition="slide">
+            <p>Paletas de diferentes designs</p><img src="img/paletas.png">
+          </section>
+          <section data-transition="slide">
+            <p>Ênfase na ação do usuário</p><img src="img/angular-material-enfase-usuario.jpg">
+          </section>
+          <section data-transition="slide">
+            <p>Componentes</p><img src="img/angular-material-componentes.jpg">
+          </section>
+          <section data-transition="slide">
+            <p>CSS Layout</p>
+            <pre><code class="xml">&lt;div layout=&quot;row&quot;&gt;
+ &lt;div&gt;Eu estou a esquerda.&lt;/div&gt;
+ &lt;div&gt;Eu estou a direita.&lt;/div&gt;
+&lt;/div&gt;
+&nbsp;
+&lt;div layout=&quot;column&quot;&gt;
+ &lt;div&gt;Eu estou em cima.&lt;/div&gt;
+ &lt;div&gt;Eu estou em baixo.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+          <section data-transition="slide">
+            <p>Atributo Flex</p><img src="img/angular-material-flex.jpg">
+            <pre><code class="xml">&lt;div layout=&quot;row&quot;&gt;
+  &lt;div flex&gt;[flex]&lt;/div&gt;
+  &lt;div flex&gt;[flex]&lt;/div&gt;
+  &lt;div flex&gt;[flex]&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+          <section data-transition="slide">
+            <p>Atributo Flex</p><img src="img/angular-material-flex-2.png">
+            <pre><code data-noescape class="xml">&lt;div layout=&quot;row&quot;&gt;
+ &lt;div flex=&quot;20&quot;&gt;
+   [flex=&quot;20&quot;]
+ &lt;/div&gt;
+ &lt;div flex=&quot;70&quot;&gt;
+   [flex=&quot;70&quot;]
+ &lt;/div&gt;
+ &lt;div flex <mark>hide-sm hide-xs</mark>&gt;
+   [flex]
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+          <section data-transition="slide">
+            <p>Usando angular-material</p>
+            <pre><code>bower install angular-material angular-aria angular-animate</code></pre>
+            <pre><code><link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css"></code></pre>
+            <pre><code><script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js">
+</script></code></pre>
+            <pre><code><script type="text/javascript">
+  //incluir a dependência do angular-material
+  angular.module('meuApp', ['ngMaterial']);
+</script></code></pre>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Exercício 5</h3>
+            <p>Vamos usar angular-material?</p>
+            <ul>
+              <li>Modifique o exercício 4 utilizando Material Design</li>
+              <li>Substitua as listas pelo componente &lt;md-list&gt;</li>
+              <li>Substitua os links por &lt;md-tabs&gt;</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-transition="slide">
+            <h3>Progressive Web App</h3>
+            <H4>Introdução</H4>
+            <p>"Esses aplicativos não são entregues através da App Store, eles são apenas websites que tomaram a dose certa de vitaminas."</p>
+          </section>
+          <section data-transition="slide">
+            <p>Progressivo o que?</p>
+            <ul>
+              <li>Responsivo</li>
+              <li>Independentes de conexão: Service Workers permite até offline</li>
+              <li>Instaláveis</li>
+              <li>Sempre Atualizados</li>
+              <li>Seguro: servidor pode usar TLS</li>
+              <li>SEO-friendly</li>
+              <li>Engajável: pode trazer usuário via notificações :)</li>
+              <li>Linkável</li>
+              <li><em>Appy-like</em></li>
+              <li>etc...</li>
+            </ul>
+          </section>
+          <section data-transition="slide">
+            <h3>Instalável</h3>
+            <p>Adicionar a tela inicial</p><img src="img/web-app/homescreen.gif">
+          </section>
+          <section data-transition="slide">
+            <h3>Instalável</h3>
+            <p>Splash Screen</p><img src="img/web-app/splashscreen.gif">
+          </section>
+          <section data-transition="slide">
+            <h3>Instalável</h3>
+            <p>Manifest</p>
+            <pre><code data-noescape>{
+ "name": "Minicurso AngularJS",
+ "short_name": "MiniAngularJS",
+ "icons": [{
+ "src": "images/touch/icon-128x128.png",
+ "sizes": "128x128",
+ "type": "image/png"
+ },
+ …
+ {
+ "src": "images/touch/chrome-splashscreen-icon-384x384.png",
+ "sizes": "384x384",
+ "type": "image/png"
+ }],
+ "start_url": <mark>"/?homescreen=1"</mark>,
+ "background_color": "#3E4EB8",
+ "display": "standalone",
+ "theme_color": "#FFFFFF"
+}</code></pre>
+          </section>
+          <section data-transition="slide">
+            <h3>Service Workers</h3>
+            <ul>
+              <li>Offline (cache)</li>
+              <li>Background Sync</li>
+              <li>Push API</li>
+              <li>Interceptar Requests</li>
+            </ul>
+          </section>
+          <section data-transition="slide">
+            <p>Cache de algumas partes</p><img src="img/web-app/appshell.jpg">
+          </section>
+          <section data-transition="slide"><iframe width="720" height="424" src="https://www.youtube.com/embed/px-J9Ghvcx4" frameborder="0" allowfullscreen></iframe></section>
+          <section data-transition="slide">
+            <h3>Engajável</h3>
+            <p>Push Notifications</p>
+            <h2>72%</h2>
+            <p>dos usuários abrem o app</p>
+          </section>
+          <section data-transition="slide">
+            <h3>Engajável</h3>
+            <p>Push Notifications</p><img src="img/web-app/push.png">
+          </section>
+          <section data-transition="slide">
+            <h3>Engajável</h3>
+            <p>Push Notifications</p><img src="img/web-app/custom_notifications.png">
+          </section>
+          <section data-transition="slide">
+            <h3>Engajável</h3>
+            <p>Chamadas Nativas</p>
+            <ul>
+              <li>Câmera</li>
+              <li>Microfone</li>
+              <li>Localização</li>
+              <li>Bluetooth</li>
+              <li>etc...</li>
+            </ul>
+          </section>
+          <section>
+            <p>Quer exemplos?</p><iframe width="720" height="424" src="https://www.youtube.com/embed/gzHdKxxlD98" frameborder="0" allowfullscreen></iframe>
+          </section>
+        </section>
+        <section data-transition="slide">
+          <section data-transition="slide">
+            <h3>Exercício final</h3><img src="img/ex-final/lista-tarefas.png" class="margin-sides-10"><img src="img/ex-final/tarefa-criada.png" class="margin-sides-10">
+            <p>Monte o seguinte app de Tarefas</p>
+          </section>
+        </section>
+        <section data-background="img/ufop-por-do-sol.jpg">
+          <h2>Obrigado!</h2>
+          <p>@ArthurAssuncao</p>
+          <p><a>ArthurAssuncao.com</a></p>
+        </section>
+      </div>
+    </div>
+    <script src="js/vendor/head.min.js"></script>
+    <script src="js/vendor/reveal.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
