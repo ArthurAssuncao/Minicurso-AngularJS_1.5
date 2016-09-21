@@ -53,13 +53,13 @@ app.factory('FacSegs', function($http){
 
 app.controller("RepoCtrl", function($scope, $http, FacRepos){
     $scope.repos = [];
-    var reposGithub = FacRepos("https://api.github.com/users/arthurassuncao/repos?client_id=8535bac83251149ac427&client_secret=0e7a3f067fb90c1a2f45c2e771dff96bed954989", $scope);
+    var reposGithub = FacRepos("https://api.github.com/users/arthurassuncao/repos", $scope);
     reposGithub.get();
 });
 
 app.controller("SegCtrl", function($scope, $http, FacSegs){
     $scope.seguidores = [];
-    var reposGithub = FacSegs("https://api.github.com/users/arthurassuncao/followers?client_id=8535bac83251149ac427&client_secret=0e7a3f067fb90c1a2f45c2e771dff96bed954989", $scope);
+    var reposGithub = FacSegs("https://api.github.com/users/arthurassuncao/followers", $scope);
     reposGithub.get();
 });
 

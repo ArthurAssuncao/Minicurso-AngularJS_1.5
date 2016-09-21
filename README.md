@@ -1,9 +1,12 @@
 # Minicurso AngularJS 1.5
-Conteudo do Minicurso de AngularJS realizado no IF Sudeste MG
+Minicurso de AngularJS realizado no IF Sudeste MG para os alunos do curso superior de Tecnologia em Sistemas para Internet.
+
+## Acesse em
+<a href="https://arthurassuncao.com/Minicurso-AngularJS_1.5/curso/build">Curso Desenvolvimento de aplicações web com AngularJS</a>
 
 ## Resumo
-AngularJS é um framework, mantido pelo Google, feito em Java script, open-source, que funciona como uma aplicação em página única (SPA). Além de abusarem dos recursos presentes no HTML5, o framework utiliza a arquitetura MVC que torna o desenvolvimento mais organizado e modularizável.
-Nesse minicurso iremos aprender a como começar uma aplicação web utilizando esse framework e seus principais recursos. Ao final seremos capazes de criar aplicações web dinâmicas, manipular os elementos da página, fazer requisições AJAX e utilizar os recursos que o framework oferece.
+AngularJS é um framework, mantido pelo Google, feito em JavaScript, open-source, que funciona como uma aplicação em página única (SPA). Além de utilizar muito dos recursos presentes no HTML5, o framework utiliza a arquitetura MVC (MV*) que torna o desenvolvimento mais organizado e modularizável.
+Nesse minicurso é ensinado a como começar uma aplicação web utilizando esse framework e seus principais recursos. Ao final os alunos são capazes de criar aplicações web dinâmicas, manipular os elementos da página, fazer requisições AJAX e utilizar os recursos que o framework oferece.
 
 ## Conteúdo
 * Introdução
