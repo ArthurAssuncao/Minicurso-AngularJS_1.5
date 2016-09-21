@@ -8,3 +8,9 @@ head
     meta(property="og:description" content="Minicurso Desenvolvimento de aplicações web com AngularJS.")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", type="text/css", href="css/main.css")
+    script
+        |var link = document.createElement( 'link' );
+        |link.rel = 'stylesheet';
+        |link.type = 'text/css';
+        |link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+        |document.getElementsByTagName('head')[0].appendChild(link);
